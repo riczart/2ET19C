@@ -46,7 +46,7 @@ namespace kartaPracy3A
                             Console.WriteLine();
                         }*/
 
-            /*            zad 7
+            /*            zad 6
                         int n = int.Parse(Console.ReadLine());
                         for (int i = 1; i < n + 1; i++)
                         {
@@ -71,17 +71,18 @@ namespace kartaPracy3A
                             }
                             Console.WriteLine();*/
 
+/*            zad 4
             int n = int.Parse(Console.ReadLine());
             for (int i = 1; i < n + 1; i++)
             {
                 for (int j = 1; j < n + 1; j++)
                 {
-                    if (i + j == n/2 + 2) Console.Write("?");
-                    else if (i == j) Console.Write("*");
+                    if (i + j == n / 2 + 2 || i + j == 3 * n/2 + 1 || i - j == n/2 || i - j == -(n/2)) Console.Write("*");
+                    else if (i == j) Console.Write(" ");
                     else Console.Write(" ");
                 }
                 Console.WriteLine();
-            }
+            }*/
 
         }
     }
