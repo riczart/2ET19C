@@ -1,0 +1,55 @@
+using ConsoleApp3;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp3
+{
+    class Student
+    {
+        public int studentNumber;
+        public int avarageMark;
+
+        public bool isEligibleToEnroll()
+        {
+            return true;
+        }
+
+        public int getSeminarsTaken()
+        {
+            return 1;
+        }
+    }
+
+    class Profesor
+    {
+        public int salary;
+        private int staffNumber;
+        private int yearsOfService;
+        public int numberOfClasses;
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+/*            Person osoba1 = new Person();
+            osoba1.Name = "erol";
+            osoba1.phoneNumber = "12314124";
+            osoba1.emailAdress = "asdsaasd@sad";
+
+            osoba1.lives_at = new Adres();
+            osoba1.lives_at.street = "Lipowa";
+            osoba1.lives_at.city = "Poznan";
+            osoba1.lives_at.state = "wlkp";
+
+            osoba1.purchaseParking();
+            Console.Write(osoba1.lives_at.ouputAsLabel());
+            Console.ReadKey();*/
+
+
+            
+        }
+    }
+}
