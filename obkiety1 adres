@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp3
+{
+    internal class Adres
+    {
+        public string street;
+        public string city;
+        public string state;
+        public int postalCode;
+        public string country;
+        private bool Validate()
+        {
+            return true;
+        }
+
+        public string ouputAsLabel()
+        {
+            return "Adres to" + " " +  street + " " + " " + city + " " + " " + state;
+        }
+    }
+}
