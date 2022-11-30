@@ -1,0 +1,69 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.AccessControl;
+using System.Security.Principal;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp8
+{
+    internal class Program
+    {
+        class Account
+        {
+            private string emailAdress;
+            private string name;
+            public string getEmailAdress()
+            {
+                return "adres";
+            }
+            public string getName()
+            {
+                return "name";
+            }
+            public void setEmailAdres()
+            {
+                Console.WriteLine("Twoj email");
+            }
+            public void setName()
+            {
+                Console.WriteLine("Set imie");
+            }
+
+            class AdressBook
+            {
+                private string name;
+                private Contact contact;
+                public Contact GetContact()
+                {
+
+                }
+                public string getName()
+                {
+                    return "getImie";
+                }
+                public void insertContact(Contact)
+                {
+                    Console.WriteLine("insertContact");
+                }
+            }
+            class Contact
+            {
+                private string emailAdress;
+                private string textNumber;
+                private string name;
+                private string primaryContactMethod;
+
+                public string getEmailAdress()
+                {
+
+                }
+            } 
+            
+        }
+        static void Main(string[] args)
+        {
+        }
+    }
+}
