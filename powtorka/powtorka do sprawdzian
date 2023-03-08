@@ -1,0 +1,153 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Komputer 
+    {
+        public string marka { get; set; }
+        public string model { get; set; }
+
+        public virtual void wyswietl()
+        {
+            Console.WriteLine($"Marka = {marka} Model = {model}");
+        }
+
+    }
+    class Laptop : Komputer
+    {
+        public double przekatna { get; set; }
+        private string kolor;
+        public string getKolor()
+        {
+            return kolor;
+        }
+
+        public void setKolor(string kolor)
+        {
+            this.kolor = kolor;
+        }
+        //najdluzsze
+
+        public override void wyswietl()
+        {
+            base.wyswietl();
+            Console.WriteLine($"Przekatna {przekatna} Kolor {kolor}");
+        }
+    }
+
+
+    class PC : Komputer
+    {
+        public string rodzaj_obudowy { get; set; }
+
+        public override void wyswietl()
+        {
+            base.wyswietl();
+            Console.WriteLine($"Rodzja obudowy {rodzaj_obudowy}");
+        }
+    }
+
+    class Osoba
+    {
+        public string imie;
+        public string Imie { get => imie; set => imie = value; } // <= dluzsze
+        public string nazwisko { get; set; } // <= szybsze
+    }
+    class Opiekun : Osoba
+    {
+
+    }
+    
+    class Klient : Osoba
+    {
+        
+        private int pesel;
+    }
+    
+    class Serwisant : Osoba
+    {
+        public string imie;
+        public string naziwsko;
+
+    }
+
+    class Zlecenie 
+    {
+        //Komputery rklient opiekun 
+        private Komputer komputer { get; set; } /*{ get => akomputer; set => akomputer = value }*/
+        private Klient klient { get; set; }
+        private Opiekun opiekun { get; set; }
+        public Zlecenie(Komputer komputer, Klient klient, Opiekun opiekun)
+        {
+            this.komputer = komputer;
+            this.klient = klient;
+            this.opiekun = opiekun;
+        }
+    }
+
+    class Naprawa
+    {
+        //serwisant, zlecenie
+        public Serwisant serwisant { get; set; }
+        public Zlecenie zlecenie { get; set; }
+
+        public Naprawa(Zlecenie zlecenie)
+        {
+            this.zlecenie = zlecenie;
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //proste banalne
+            /*
+            Laptop l = new Laptop();
+            l.marka = Console.ReadLine();
+            l.model = Console.ReadLine();
+            l.przekatna = float.Parse(Console.ReadLine());
+            l.setKolor(Console.ReadLine());
+            Console.WriteLine(l.marka + " " + l.model + " " + l.przekatna + " " + l.getKolor());
+            */
+
+            //trudne i kreatywne
+            Console.WriteLine("Co masz do naprawy?");
+            Console.WriteLine("1 - komp");
+            Console.WriteLine("2 - laptop");
+            int wybor = int.Parse(Console.ReadLine());
+            switch(wybor)
+            {
+                case 1:
+                {
+                        PC pc = new PC();
+                        pc.marka = Console.ReadLine();
+                        pc.model = Console.ReadLine();
+                        pc.rodzaj_obudowy = (Console.ReadLine());
+                        Console.WriteLine(pc.marka + " " + pc.model + " " + pc.rodzaj_obudowy);
+                        break;
+                }
+
+                case 2:
+                {
+                        Laptop l = new Laptop();
+                        l.marka = Console.ReadLine();
+                        l.model = Console.ReadLine();
+                        l.przekatna = float.Parse(Console.ReadLine());
+                        l.setKolor(Console.ReadLine());
+                        Console.WriteLine(l.marka + " " + l.model + " " + l.przekatna + " " + l.getKolor());
+                        break;
+                }
+
+                default:
+                {
+                    Console.WriteLine("Miales podac 1 lub 2");
+                    break;
+                }
+            }
+        }
+    }
+}
